@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "Les Chanceux",
-  "version": "0.1.1",
+  "name": "The Lucky Ones",
+  "version": "0.1.2",
   "icons": {
     "16": "icon.png",
     "128": "icon-128.png"
