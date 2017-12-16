@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "Les Chanceux",
+  "version": "0.1.1",
+  "icons": {
+    "16": "icon.png",
+    "128": "icon-128.png"
+  },
+  "description": "Quickly apply for tons of Broadway lotteries with just one click.",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "index.html"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["content.js", "jquery-2.2.4.min.js"]
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "storage"
+  ]
+}

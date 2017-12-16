@@ -1,0 +1,273 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Les Chanceux</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+    <style type="text/css">
+      body {
+        white-space: nowrap;
+        font-family: 'Open Sans' !important;
+        margin: 0;
+      }
+
+      h1, h2, h3, h4, h5, h6, p, a {
+        margin: 0;
+      }
+      div * {
+        box-sizing: border-box !important;
+      }
+
+      #container {
+        min-width: 500px;
+        max-width: 700px;
+        background: #f3f1f0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      input, textarea, select, button {
+        font-family: 'Open Sans' !important;
+        outline: none;
+      }
+      label {
+        width: 100%;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        font-size: 10px;
+        font-weight: 600;
+        color: rgb(170,170,170);
+      }
+      .headline {
+        margin-left: 5%;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        font-weight: 400;
+        font-size: 14px;
+        color: rgb(115,100,100);
+      }
+      .info_form, .lotteries_form {
+        width: 90%;
+        margin: 5px auto;
+      }
+      .info_form > * {
+        float: left;
+      }
+      .info_input {
+        border-style: solid;
+        border-color: rgb(245,240,240);
+        background: white;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 5px 3%;
+        cursor: text;
+        height: 55px;
+      }
+      .info_input:hover {
+        background: rgb(245,245,252);
+      }
+      .numtixopt:hover {
+        border: 1px solid rgb(210,210,252);
+      }
+      .tix_info:hover {
+        background: white !important;
+      }
+      label {
+        cursor: text;
+      }
+      .text_input {
+        width: 100%;
+        height: 50%;
+        border-width: 0;
+        background: inherit;
+      }
+      .tix_info {
+        width: 20%;
+        border-width: 1px 0 1px 1px;
+        cursor: default;
+      }
+      .age_info {
+        width: 20%;
+        border-width: 0px 0 1px 1px;
+      }
+      .firstname_info {
+        width: 40%;
+        border-width: 1px;
+      }
+      .lastname_info {
+        width: 40%;
+        border-width: 1px 1px 1px 0;
+      }
+      .email_info {
+        width: 80%;
+        border-width: 0 1px 1px 1px;
+      }
+      .zipcode_info {
+        width: 20%;
+        border-width: 0 0 1px 1px;
+      }
+      .mob_info {
+        width: 25%;
+        border-width: 0 0 1px 1px;
+      }
+      .dob_info {
+        width: 25%;
+        border-width: 0 0 1px 1px;
+      }
+      .yob_info {
+        width: 29.9%;
+        border-width: 0 0 1px 1px;
+      }
+      .clearfix:after {
+         content: ".";
+         visibility: hidden;
+         display: block;
+         height: 0;
+         clear: both;
+      }
+
+      ::-webkit-input-placeholder {
+        color: rgb(200,200,200);
+        font-weight: 300;
+      }
+
+      .numtixbox {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 1px;
+      }
+      .numtixopt {
+        width: 24px;
+        height: 24px;
+        border-radius: 2px;
+        border: 1px solid rgb(183,183,183);
+        background: rgb(252,252,252);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 4px;
+        font-weight: 400;
+        font-size: 12px;
+        color: rgb(140,140,140) !important;
+        box-shadow: 1px 1px 4px rgba(220,220,220,0.5);
+        cursor: pointer;
+      }
+      .numtixselected, #submit_button {
+        background: rgb(200,200,255);
+      }
+      #submit_button {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 250px;
+        margin: 18px auto 12px auto;
+        border-radius: 3px;
+        border: 1px solid rgb(210,210,210);
+        padding: 6px 0;
+        font-size: 14px;
+      }
+      #submit_button p {
+        font-weight: 600;
+        color: rgb(100,100,100);
+      }
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+    -->
+    <script src="jquery-2.2.4.min.js"></script>
+    <script src="index.js"></script>
+  </head>
+
+  <body>
+    <div id="container">
+      <h3 class="headline">Info for Musicals</h3>
+      <div class="info_form clearfix">
+        <div class="tix_info info_input">
+          <label for="tix"># of Tickets</label>
+          <div class="numtixbox">
+            <div class="numtixopt">1</div>
+            <div class="numtixopt numtixselected">2</div>
+          </div>
+        </div>
+        <div class="firstname_info info_input">
+          <label for="firstname">First Name</label>
+          <input type="text" class="text_input" id="firstname" name="firstname">
+        </div>
+        <div class="lastname_info info_input">
+          <label for="lastname">Last Name</label>
+          <input type="text" class="text_input" id="lastname" name="lastname">
+        </div>
+        <div class="zipcode_info info_input">
+          <label for="zipcode">Zip Code</label>
+          <input type="text" class="text_input" pattern="[0-9]*" maxlength="5" id="zipcode" name="zipcode"></br>
+        </div>
+        <div class="email_info info_input">
+          <label for="email">Email</label>
+          <input type="text" class="text_input" id="email" name="email">
+        </div>
+        <div class="age_info info_input">
+          <label for="age">Age</label>
+          <input type="text" class="text_input" pattern="[0-9]*" maxlength="2" id="age" name="age">
+        </div>
+        <div class="mob_info info_input">
+          <label for="mob">Month (Birth)</label>
+          <input type="text" class="text_input" pattern="[0-9]*" placeholder="MM" maxlength="2" id="month" name="month">
+        </div>
+        <div class="dob_info info_input">
+          <label for="dob">Day (Birth)</label>
+          <input type="text" class="text_input" pattern="[0-9]*" placeholder="DD" maxlength="2" id="day" name="day">
+        </div>
+        <div class="yob_info info_input">
+          <label for="yob">Year (Birth)</label>
+          <input type="text" class="text_input" pattern="[0-9]*" placeholder="YYYY" maxlength="4" id="year" name="year">
+        </div>
+      </div>
+      <h3 class="headline">Lotteries to Enter</h3>
+      <div class="lotteries_form">
+        <input type="checkbox" id="aladdin" name="musicals" value="aladdin" checked>
+        <label for="aladdin">Aladdin (opens 7pm closes 8:30am)</label></br>
+        <input type="checkbox" id="anastasia" name="musicals" value="anastasia" checked>
+        <label for="anastasia">Anastasia (opens 12am closes 2pm)</label></br>
+        <input type="checkbox" id="mormon" name="musicals" value="mormon" checked>
+        <label for="mormon">Book of Mormon</label></br>
+        <input type="checkbox" id="cats" name="musicals" value="cats" checked>
+        <label for="cats">Cats (opens 10am closes 3pm)</label></br>
+        <input type="checkbox" id="charlie" name="musicals" value="charlie" checked>
+        <label for="charlie">Charlie and the Chocolate Factory (opens 10am closes 2pm)</label></br>
+        <input type="checkbox" id="deh" name="musicals" value="deh" checked>
+        <label for="deh">Dear Evan Hansen (opens 12am closes 2pm)</label></br>
+        <input type="checkbox" id="hamilton" name="musicals" value="hamilton" checked>
+        <label for="hamilton">Hamilton</label></br>
+        <input type="checkbox" id="holidays" name="musicals" value="holidays" checked>
+        <label for="holidays">Home for the Holidays</label></br>
+        <input type="checkbox" id="junk" name="musicals" value="junk" checked>
+        <label for="junk">Junk (opens 12am closes 2pm)</label></br>
+        <input type="checkbox" id="kinky" name="musicals" value="kinky" checked>
+        <label for="kinky">Kinky Boots</label></br>
+        <input type="checkbox" id="lionking" name="musicals" value="lionking" checked>
+        <label for="lionking">Lion King (opens 8pm closes 9am)</label></br>
+        <input type="checkbox" id="phantom" name="musicals" value="phantom" checked>
+        <label for="phantom">The Phantom of the Opera (opens 7am closes 9am)</label></br>
+        <input type="checkbox" id="spongebob" name="musicals" value="spongebob" checked>
+        <label for="spongebob">SpongeBob SquarePants (opens 7am closes 3pm)</label></br>
+        <input type="checkbox" id="springsteen" name="musicals" value="springsteen" checked>
+        <label for="springsteen">Springsteen on Broadway</label></br>
+        <input type="checkbox" id="wicked" name="musicals" value="wicked" checked>
+        <label for="wicked">Wicked (opens 8pm closes 2pm)</label></br>
+      </div>
+      <div>
+        <div id="submit_button">
+          <p>Enter all these lotteries</p>
+        </div>
+      </div>
+  </body>
+</html>
