@@ -3,19 +3,17 @@ chrome.runtime.onMessage.addListener(
     $( document ).ready(function() {
       let musicals = {
         aladdin: 'direct',
-        anastasia: 'social',
+        angels: 'direct',
         mormon: 'lucky',
-        cats: 'direct',
         charlie: 'direct',
-        deh: 'social',
+        escape: 'direct',
+        frozen: 'turnkey',
         hamilton: 'lucky',
-        holidays: 'lucky',
-        junk: 'social',
         kinky: 'lucky',
         lionking: 'direct',
-        phantom: 'social',
+        meangirls: 'lucky',
         spongebob: 'direct',
-        springsteen: 'lucky',
+        springsteen: 'turnkey',
         wicked: 'direct'
       };
       let musical = request.musical;
@@ -59,6 +57,22 @@ chrome.runtime.onMessage.addListener(
           }
           else if(formInfo.numtix === 1) {
             document.getElementById('one_ticket').checked = true;
+          }
+        }
+        else if (musicals[musical] === 'turnkey') {
+          $('li.select-area input').each(function(i) {
+            $(this).prop('checked', true);
+          });
+          document.getElementById('Q3_1').value = formInfo.firstnameval;
+          document.getElementById('Q4_1').value = formInfo.lastnameval;
+          document.getElementById('Q5_1').value = formInfo.emailval;
+          document.getElementById('Q6_1').value = formInfo.zipcodeval;
+          document.getElementById('Q11_1').value = formInfo.ageval;
+          if(formInfo.numtix === 2) {
+            document.getElementById('Q10_2').checked = true;
+          }
+          else if(formInfo.numtix === 1) {
+            document.getElementById('Q10_1').checked = true;
           }
         }
       }

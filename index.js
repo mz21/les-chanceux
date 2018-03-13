@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
       year.value = form.yearval;
     }
     if(form.ageval) {
-      age.value = form.ageval;      
+      age.value = form.ageval;
     }
     if(form.numtix) {
       if(form.numtix === 2) {
