@@ -1,12 +1,12 @@
 {
   "manifest_version": 2,
   "name": "The Lucky Ones",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "icons": {
     "16": "icon.png",
     "128": "icon-128.png"
   },
-  "description": "Quickly apply for tons of Broadway lotteries with just one click.",
+  "description": "Quickly apply for tons of Broadway lotteries with just a few clicks.",
   "browser_action": {
     "default_icon": "icon.png",
     "default_popup": "index.html"
