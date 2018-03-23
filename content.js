@@ -43,6 +43,7 @@ chrome.runtime.onMessage.addListener(
           document.getElementById('lastname').value = formInfo.lastnameval;
           document.getElementById('email').value = formInfo.emailval;
           document.getElementById('zipcode').value = formInfo.zipcodeval;
+          document.getElementById('age').checked = true;
           document.getElementById('age').value = formInfo.ageval;
           let twitter = document.getElementById('social_twitter');
           let facebook = document.getElementById('social_facebook');
