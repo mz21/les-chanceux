@@ -17,7 +17,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
           url = 'https://lottery.broadwaydirect.com/show/escape/';
           break;
         case 'frozen':
-          url = 'https://baa.turnkeysurveyor.com/se/5145A8F937B3D592';
+          url = 'https://www.luckyseat.com/frozen/';
           break;
         case 'hamilton':
           url = 'http://www.luckyseat.com/hamilton-ny/';
@@ -35,7 +35,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
           url = 'https://lottery.broadwaydirect.com/show/sponge/';
           break;
         case 'springsteen':
-          url = 'https://baa.turnkeysurveyor.com/se/5145A8F96ABFD2D0';
+          url = 'https://www.luckyseat.com/springsteen-broadway/';
           break;
         case 'wicked':
           url = 'https://lottery.broadwaydirect.com/show/wicked/';

@@ -7,13 +7,13 @@ chrome.runtime.onMessage.addListener(
         mormon: 'lucky',
         charlie: 'direct',
         escape: 'direct',
-        frozen: 'turnkey',
+        frozen: 'lucky',
         hamilton: 'lucky',
         kinky: 'lucky',
         lionking: 'direct',
         meangirls: 'lucky',
         spongebob: 'direct',
-        springsteen: 'turnkey',
+        springsteen: 'lucky',
         wicked: 'direct'
       };
       let musical = request.musical;
