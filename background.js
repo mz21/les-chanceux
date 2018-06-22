@@ -40,6 +40,9 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         case 'wicked':
           url = 'https://lottery.broadwaydirect.com/show/wicked/';
           break;
+        case 'hamilton2':
+          url = 'https://www.luckyseat.com/hamilton-washington/';
+          break;
         default:
           console.log(request);
       }

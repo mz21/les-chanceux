@@ -14,7 +14,8 @@ chrome.runtime.onMessage.addListener(
         meangirls: 'lucky',
         spongebob: 'direct',
         springsteen: 'lucky',
-        wicked: 'direct'
+        wicked: 'direct',
+        hamilton2: 'lucky',
       };
       let musical = request.musical;
       let formInfo = request.formInfo;
