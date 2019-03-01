@@ -3,19 +3,17 @@ chrome.runtime.onMessage.addListener(
     $( document ).ready(function() {
       let musicals = {
         aladdin: 'direct',
-        angels: 'direct',
         mormon: 'lucky',
         charlie: 'direct',
-        escape: 'direct',
         frozen: 'lucky',
         hamilton: 'lucky',
         kinky: 'lucky',
         lionking: 'direct',
         meangirls: 'lucky',
-        spongebob: 'direct',
-        springsteen: 'lucky',
+        pretty: 'direct',
         wicked: 'direct',
-        hamilton2: 'lucky',
+        hamiltonsf: 'lucky',
+        hamiltonchi: 'lucky'
       };
       let musical = request.musical;
       let formInfo = request.formInfo;

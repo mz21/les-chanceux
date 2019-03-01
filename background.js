@@ -7,23 +7,17 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         case 'aladdin':
           url = 'https://lottery.broadwaydirect.com/show/aladdin/';
           break;
-        case 'angels':
-          url = 'https://lottery.broadwaydirect.com/show/angels/';
-          break;
         case 'mormon':
           url = 'https://www.luckyseat.com/book-of-mormon/';
           break
-        case 'escape':
-          url = 'https://lottery.broadwaydirect.com/show/escape/';
-          break;
         case 'frozen':
           url = 'https://www.luckyseat.com/frozen/';
           break;
         case 'hamilton':
-          url = 'http://www.luckyseat.com/hamilton-ny/';
+          url = 'https://www.luckyseat.com/hamilton-ny/';
           break;
         case 'kinky':
-          url = 'http://www.luckyseat.com/kinky-boots/';
+          url = 'https://www.luckyseat.com/kinky-boots/';
           break;
         case 'lionking':
           url = 'https://lottery.broadwaydirect.com/show/the-lion-king/';
@@ -31,17 +25,17 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         case 'meangirls':
           url = 'https://www.luckyseat.com/mean-girls/';
           break;
-        case 'spongebob':
-          url = 'https://lottery.broadwaydirect.com/show/sponge/';
-          break;
-        case 'springsteen':
-          url = 'https://www.luckyseat.com/springsteen-broadway/';
+        case 'pretty':
+          url = 'https://lottery.broadwaydirect.com/show/pretty/';
           break;
         case 'wicked':
           url = 'https://lottery.broadwaydirect.com/show/wicked/';
           break;
-        case 'hamilton2':
-          url = 'https://www.luckyseat.com/hamilton-washington/';
+        case 'hamiltonsf':
+          url = 'https://www.luckyseat.com/hamilton-sanfrancisco/';
+          break;
+        case 'hamiltonchi':
+          url = 'https://www.luckyseat.com/hamilton-chi/';
           break;
         default:
           console.log(request);
